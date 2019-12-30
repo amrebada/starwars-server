@@ -1,12 +1,11 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb-base",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": [ ],
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "plugins": [],
   "env": {
     "jest": true
   },
-  "rules": {}
+  "rules": {
+    "no-console": "off"
+  }
 }
