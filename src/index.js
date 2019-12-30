@@ -1,6 +1,6 @@
 import express from "express";
 import graphQlHTTP from "express-graphql";
-import schema from "./schemas/schema";
+import schema from "./schemas";
 import dbInit from "./models/index";
 import config from "./config";
 
