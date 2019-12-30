@@ -1,8 +1,11 @@
 import { GraphQLObjectType, GraphQLSchema } from "graphql";
+import task1 from "./task1";
 
 const rootQuery = new GraphQLObjectType({
   name: "rootQuery",
-  fields: {}
+  fields: {
+    ...task1
+  }
 });
 
 export default new GraphQLSchema({

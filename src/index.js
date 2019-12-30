@@ -10,7 +10,8 @@ app.use(
   "/graphql",
   graphQlHTTP({
     schema,
-    graphiql: true
+    graphiql: true,
+    customFormatErrorFn: error => error.message
   })
 );
 
