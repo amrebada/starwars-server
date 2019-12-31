@@ -1,19 +1,24 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
 import films from "../models/films";
 
 export const getLongestOpeningCredit = async () => {
-  const allFilms = await films.find({});
-  return allFilms.reduce((prev, next) => {
-    if (!prev.max) {
-      prev = { max: prev.opening_crawl.length, name: prev.title };
-    }
-    if (next.opening_crawl.length > prev.max) {
-      return {
-        max: next.opening_crawl.length,
-        name: next.title
-      };
-    }
-    return prev;
-  }).name;
+  const longest = { title: null, max: null };
+  await films
+    .find({})
+    .lean()
+    .cursor()
+    .eachAsync(film => {
+      if (!longest.max) {
+        longest.title = film.title;
+        longest.max = film.opening_crawl.length;
+      }
+      if (film.opening_crawl.length > longest.max) {
+        longest.title = film.title;
+        longest.max = film.opening_crawl.length;
+      }
+    });
+
+  return longest.title;
 };
