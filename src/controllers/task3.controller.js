@@ -61,7 +61,7 @@ export const MostAppearedSpecies = async () => {
   const species = {};
   await connection.db
     .collection("species")
-    .find({ people: { $in: [...characters] } })
+    .find({})
     .forEach(doc => {
       species[doc.name] = {
         total: getSpeciesCharacterNumber(doc.people, count),
