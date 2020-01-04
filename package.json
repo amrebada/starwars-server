@@ -15,7 +15,7 @@
     "postcoverage": "open-cli coverage/lcov-report/index.html",
     "lint": "eslint .",
     "clean": "rimraf dist",
-    "build": "babel src -d dist",
+    "build": "npm run clean && babel src -d dist",
     "start": "npm run build && node dist/index.js"
   },
   "husky": {

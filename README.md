@@ -2,6 +2,17 @@
 
 Starwars Application implemented for Prototype company task with NodeJS, ExpressJS, ReactJS, GraphQl, Apollo, JWT, REST, MongoDB.
 
+## Demo
+
+### Live
+
+- server: [prototype-starwars-server](https://prototype-starwars-server.herokuapp.com/)
+- front: [prototype-starwars-front.herokuapp.com](https://prototype-starwars-front.herokuapp.com/)
+
+### Video
+
+- Youtube : [video](https://youtu.be/p7anFPkr2lU)
+
 ## Requirements:
 
 - ✅ Github
